@@ -9,7 +9,7 @@ data = []
 
 class Person(BaseModel):
     name: str
-    occuption: str
+    occupation: str
     address: str
 
 @app.get("/person")
@@ -18,7 +18,7 @@ async def get_all_persons():
 
 @app.post("/person")
 async def create_new_person(person_request: Person):
-    if not person_request.name or not person_request.address or not person_request.occuption:
+    if not person_request.name or not person_request.address or not person_request.occupation:
        false = False
        details = {"success": false,
                   "result": {"error message":"invalid request"} }
